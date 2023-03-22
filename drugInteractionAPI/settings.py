@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-j26_1n*90m=l0r(9h0uyho*+&c5jmhbs79knub%32d)(p5^m7)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["drugchecker-production.up.railway.app", "127.0.0.1"]
 
 
 # Application definition
@@ -141,3 +141,4 @@ STATIC_URL = '/static/'
 # Simplified static file serving.
 # https://pypi.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+CSRF_TRUSTED_ORIGINS = ["drugchecker-production.up.railway.app"]

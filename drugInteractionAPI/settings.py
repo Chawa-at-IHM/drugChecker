@@ -141,4 +141,4 @@ STATIC_URL = '/static/'
 # Simplified static file serving.
 # https://pypi.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-CSRF_TRUSTED_ORIGINS = ["drugchecker-production.up.railway.app"]
+CSRF_TRUSTED_ORIGINS = ["https://drugchecker-production.up.railway.app/"]

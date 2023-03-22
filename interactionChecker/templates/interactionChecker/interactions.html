@@ -1,0 +1,38 @@
+{% extends "interactionChecker/layout.html" %}
+{% load static %}
+
+{% block body %}
+{% if drugBeingChecked %}
+ <h2>{{drugBeingChecked}}</h2>
+
+{% for listOfInteractionPairs in drugsToUnpack %}
+<ol> 
+
+
+{% for drug_interaction_pair in listOfInteractionPairs %}
+
+    <li>
+        <h3> {{drug_interaction_pair.interactionConcept.0.minConceptItem.name}} vs {{drug_interaction_pair.interactionConcept.1.minConceptItem.name}} </h3>
+        <p><strong>Severity</strong>: {{drug_interaction_pair.severity}} </p>
+        <p><strong>Description</strong>: {{drug_interaction_pair.description}}</p>
+    </li>
+
+
+{% endfor %}
+</ol>
+
+{% endfor %}
+{% elif drugsToCheckString %}
+<h2>{{ drugsToCheckString }}</h2>
+<ol>
+    {% for interaction in fullInteractionList %}
+    <h3>{{ interaction.minConcept.0.name }} vs {{interaction.minConcept.1.name}}</h3>
+    <p><strong>Severity</strong>: {{interaction.interactionPair.0.severity}} </p>
+    <p><strong>Description</strong>: {{ interaction.interactionPair.0.description }} </p>
+    {% endfor %}
+</ol>
+
+
+{% endif %}
+
+{% endblock %}

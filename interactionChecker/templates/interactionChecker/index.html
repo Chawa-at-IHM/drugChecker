@@ -1,0 +1,22 @@
+{% extends "interactionChecker/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+<div class="container">
+    <h1>Interaction Checker</h1>
+    <form action="{% url 'interactions' %}" method="get">
+        <div class="form-group row">
+            <label for="drugName" class="col-sm-2 col-form-label">Enter Drug</label>
+            <div class="col-sm-10">
+              <input name="drug" type="text" class="form-control-plaintext" id="drugName" placeholder="Enter the name of drug you want to check:">
+            </div>
+          </div>
+          <input class="btn btn-primary" type="submit" value="Check">
+          </div>
+    </form>
+</div>
+
+
+
+{% endblock %}
